@@ -1,11 +1,10 @@
 package com.caico.estoque.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.annotation.Nullable;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 public class Avaria {
@@ -18,13 +17,14 @@ public class Avaria {
     Double valor;
     String observacoes;
     Integer filial;
+    @Nullable
+    Long fotoId;
     String usuario;
     LocalDate data;
-
     public Avaria() {
     }
 
-    public Avaria(Long codigoProduto, String nomeProduto, Double quantidade, Double valor, String observacoes, Integer filial, String usuario, LocalDate data) {
+    public Avaria(Long codigoProduto, String nomeProduto, Double quantidade, Double valor, String observacoes, Integer filial, Long fotoId, String usuario, LocalDate data) {
         this.codigoProduto = codigoProduto;
         this.nomeProduto = nomeProduto;
         this.quantidade = quantidade;
@@ -33,6 +33,7 @@ public class Avaria {
         this.filial = filial;
         this.usuario = usuario;
         this.data = data;
+        this.fotoId = fotoId;
     }
 
     public Long getId() {

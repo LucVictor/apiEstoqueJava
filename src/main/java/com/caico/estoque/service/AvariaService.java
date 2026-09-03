@@ -60,6 +60,7 @@ public class AvariaService {
                 custoTotal,
                 avaria.observacoes(),
                 usuarioAutenticado.getFilial(),
+                null,
                 usuarioAutenticado.getUsuario(),
                 LocalDate.now()
         );
